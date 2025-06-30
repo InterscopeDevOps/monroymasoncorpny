@@ -6,7 +6,7 @@ import Map from "../components/Contact/MapContent";
 import BaseLayout from "../components/global/BaseLayout";
 import CounterUp from "../components/global/CounterUp";
 import ServicesHome from "../components/Services/ServicesHome_3";
-import HeroSection from "../components/Home/HeroSection";
+import HeroVideo from "../components/Home/HeroVideo";
 import Paletacolor from "../components/global/Paletacolor";
 import BlockPrincipal from "../components/block/Block_4";
 import BlockSecondary from "../components/block/Block_12";
@@ -31,10 +31,10 @@ function Home() {
          <Modal /> 
 
         <input className="absolute -z-50" autoFocus></input>
-        <HeroSection
+        <HeroVideo
           title={rpdata?.dbSlogan?.[3]?.slogan}
           texts={rpdata?.dbValues?.[0].description}
-          urlVideo={"https://firebasestorage.googleapis.com/v0/b/videos-de-stock.appspot.com/o/Roofing%2FRoofing%20Services.mp4?alt=media&token=c8130fbf-0cb4-4943-890d-ce48094c2361&_gl=1*1tvlkef*_ga*MTE3MTYyMjExMy4xNjg2MTY3OTI1*_ga_CW55HF8NVT*MTY5NzgxOTA4Mi4yMTMuMS4xNjk3ODE5MTIwLjIyLjAuMA.."}
+          urlVideo={"https://firebasestorage.googleapis.com/v0/b/azteca-a-j-landscape-inc.appspot.com/o/New%20York.mp4?alt=media&token=f51b059a-e47f-4156-9a33-92e07306b256"}
           bgImg={rpdata?.stock?.[10]}
           bgImg1={rpdata?.stock?.[11]}
           bgImg2={rpdata?.stock?.[12]}

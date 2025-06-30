@@ -28,16 +28,19 @@ function BaseLayout(props) {
 
   useEffect(() => {
     const getReviews = async () => {
-      const url = `https://apireviews.herokuapp.com/api/reviews/${idCompany}`;
-      const resp = await axios.get(url);
-      setReviewsDB(resp.data);
-      // console.log(resp.data);
-      //order by date
-      const reviews = resp.data.sort((a, b) => {
-        return new Date(b.Date) - new Date(a.Date);
-      });
-      setReviewsDB(reviews);
+      if (!idCompany) return;
+
+      try {
+        const url = `https://apireviews.herokuapp.com/api/reviews/${idCompany}`;
+        const resp = await axios.get(url);
+
+        const sorted = resp.data.sort((a, b) => new Date(b.Date) - new Date(a.Date));
+        setReviewsDB(sorted);
+      } catch (err) {
+        console.error("Error fetching reviews:", err);
+      }
     };
+
     getReviews();
   }, [idCompany]);
 
